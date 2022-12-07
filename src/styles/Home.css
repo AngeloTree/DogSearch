@@ -1,6 +1,6 @@
 .Home {
-  background-color: red;
-  height: 500px;
+  background-color: rgb(239, 239, 239);
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -10,8 +10,10 @@
 
 .div-one,
 .div-two {
+  margin-top: 50px;
 }
 
-.div-one {
-  margin-bottom: 20px;
+.div-three img {
+  margin-top: 50px;
+  height: 200px;
 }
