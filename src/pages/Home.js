@@ -3,6 +3,13 @@ import "../styles/Home.css";
 
 const Home = () => {
   const [search, setSearch] = useState("");
+  const [image, setImage] = useState("");
+
+  const fetchImage = async (breed) => {
+    const res = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
+    const imageData = await res.json();
+    setImage(imageData);
+  };
 
   const handleChange = (event) => {
     setSearch(event.target.value);
@@ -11,19 +18,11 @@ const Home = () => {
   };
 
   const handleClick = (event) => {
-    console.log(search);
-  };
-
-  const [image, setImage] = useState("");
-
-  const fetchImage = async () => {
-    const res = await fetch("https://dog.ceo/api/breeds/image/random");
-    const imageData = await res.json();
-    setImage(imageData);
+    fetchImage(search);
   };
 
   useEffect(() => {
-    fetchImage();
+    fetchImage("boxer");
   }, []);
 
   return (
