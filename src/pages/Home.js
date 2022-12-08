@@ -5,6 +5,12 @@ const Home = () => {
   const [search, setSearch] = useState("");
   const [image, setImage] = useState("");
 
+  const fetchAllBreeds = async () => {
+    const res = await fetch(`https://dog.ceo/api/breeds/list/all`);
+    const dogBreeds = await res.json();
+    console.log(dogBreeds);
+  };
+
   const fetchImage = async (breed) => {
     const res = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
     const imageData = await res.json();
