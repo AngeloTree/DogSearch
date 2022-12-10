@@ -10,10 +10,11 @@
 
 .div-one,
 .div-two {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .div-three img {
   margin-top: 50px;
-  height: 200px;
+  height: 100%;
+  border-radius: 5px;
 }

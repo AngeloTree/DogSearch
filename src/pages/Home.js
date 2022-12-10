@@ -46,6 +46,7 @@ const Home = () => {
 
   return (
     <div className="Home">
+      <h1>Dog Breed Search</h1>
       <div className="div-one">
         <input id="message" type="text" onChange={handleChange} />
       </div>
