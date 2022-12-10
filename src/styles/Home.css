@@ -8,9 +8,28 @@
   flex-direction: column;
 }
 
+.Home h1 {
+  color: rgb(77, 77, 77);
+}
+
 .div-one,
 .div-two {
   margin-top: 20px;
+}
+
+.div-one input {
+  background: transparent;
+  border-style: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.div-two button {
+  border-radius: 2px;
+  padding: 6px 13px;
+  border: 1px solid black;
+  color: rgb(147, 188, 228);
+  cursor: pointer;
+  box-shadow: 1px 2px #06060628;
 }
 
 .div-three img {
