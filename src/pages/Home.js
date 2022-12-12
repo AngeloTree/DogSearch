@@ -12,7 +12,7 @@ const Home = () => {
     const breedArray = [];
     for (let key in dogBreeds) {
       for (let key1 in dogBreeds[key]) {
-        if (breedArray.includes(key1)) {
+        if (breedArray.includes(key1) || isNaN(key1) === false) {
           break;
         }
         breedArray.push(key1);
@@ -46,6 +46,14 @@ const Home = () => {
     }
   };
 
+  const optionPopulate = (event) => {
+    let options = "";
+    breeds.forEach((item, index) => {
+      options += `<option value="${item}">`;
+    });
+    document.getElementById("Breeds").innerHTML = options;
+  };
+
   useEffect(() => {
     fetchImage("boxer");
     fetchAllBreeds();
@@ -55,16 +63,21 @@ const Home = () => {
     <div className="Home">
       <h1>Dog Breed Search</h1>
       <div className="div-one">
-        <input
-          id="message"
-          placeholder="Type breed"
-          type="text"
-          onChange={handleChange}
-          onKeyDown={keyDownHandle}
-        />
+        <form action="">
+          <input
+            id="message"
+            placeholder="Type breed"
+            type="text"
+            list="Breeds"
+            onChange={handleChange}
+            onKeyDown={keyDownHandle}
+            onClick={optionPopulate}
+          />
+          <datalist id="Breeds"></datalist>
+        </form>
       </div>
       <div className="div-two">
-        <button onClick={handleClick}>Search</button>
+        <button onClick={handleClick}>Enter</button>
       </div>
       <div className="div-three">
         <img src={image.message} alt="" />
