@@ -27,6 +27,13 @@ const Home = () => {
     setImage(imageData);
   };
 
+  const keyDownHandle = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleClick();
+    }
+  };
+
   const handleChange = (event) => {
     setSearch(event.target.value.toLowerCase());
   };
@@ -53,6 +60,7 @@ const Home = () => {
           placeholder="Type breed"
           type="text"
           onChange={handleChange}
+          onKeyDown={keyDownHandle}
         />
       </div>
       <div className="div-two">

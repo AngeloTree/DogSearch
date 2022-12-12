@@ -6,10 +6,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .Home h1 {
   color: rgb(77, 77, 77);
+  letter-spacing: 3px;
 }
 
 .div-one,
